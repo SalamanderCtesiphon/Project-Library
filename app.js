@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Books(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -11,7 +11,13 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    // do stuff here
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let read = document.getElementById('read').value;
+    let newBook = new Books(title, author, pages, read);
+    myLibrary.push(newBook);
+    displayBooks();
 }
 
 // a funtion to loop through the array and display each book on the page
@@ -31,10 +37,11 @@ function displayBooks() {
         }  
 }  
 
-/* const theHobbit = new Books('The Hobbit', 'J.R.R. Tolkein', "295", 'not read yet')
-
-console.log(theHobbit.info());
- */
+const theHobbit = new Books('The Hobbit', 'J.R.R. Tolkein', "295", 'have read')
+const neuroman = new Books('Neuromancer', 'William Gibson', "272", 'have read')
+const crimeAndPunishment = new Books('Crime and Punishment', 'Fyodor Dostoyevsky', "672", 'have read')
+const doAndroidsDream = new Books('Do Androids Dream of Electric Sheep?', 'Philip K. Dick', "256", 'have read')
+const snowCrash = new Books('Snow Crash', 'Neal Stephenson', "470", 'have not read')
 
 
 
