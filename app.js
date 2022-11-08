@@ -1,4 +1,4 @@
-/* function Books(title, author, pages, read) {
+function Books(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -10,16 +10,9 @@
 
 const theHobbit = new Books('The Hobbit', 'J.R.R. Tolkein', "295", 'not read yet')
 
-console.log(theHobbit.info()); */
+console.log(theHobbit.info());
 
-function PrintStuff (myDocuments) {
-    this.documents = myDocuments;
-}
 
-PrintStuff.prototype.print = function() {
-    console.log(this.documents);
-}
 
-const newObj = new PrintStuff("I am a new Object and I can print.");
 
-newObj.print();
+
