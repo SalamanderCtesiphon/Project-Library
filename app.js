@@ -14,29 +14,3 @@ const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', "have 
 
 console.log(theHobbit.info()); */
 
-function Student() {
-
-}
-
-Student.prototype.sayName = function() {
-    console.log(this.name)
-}
-
-function EighthGrader(name) {
-    this.name = name
-    this.grade = 8
-}
-
-EighthGrader.prototype = Object.create(Student.prototype)
-
-function NinthGrader(name) {
-    this.name = name
-    this.grade = 9
-}
-
-NinthGrader.prototype = Object.create(Student.prototype)
-
-NinthGrader.prototype.sayName = function() {console.log("HAHAHAHAHAHAHAHAHA")}
-
-const carl = new EighthGrader("carl")
-carl.sayName()
