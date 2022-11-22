@@ -1,6 +1,8 @@
+let myLibrary = [];
+
 // write a constructor for makkng "Book" objects
 
-/* function Book(title, author, numberOfPages, haveRead) {
+function Book(title, author, numberOfPages, haveRead) {
     this.title = title
     this.author = author
     this.numberOfPages = numberOfPages
@@ -12,5 +14,7 @@
 
 const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', "have read")
 
-console.log(theHobbit.info()); */
+function addBookToLibrary() {
+    
+}
 
