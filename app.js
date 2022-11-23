@@ -8,7 +8,7 @@ function Book(title, author, numberOfPages, haveRead) {
     this.numberOfPages = numberOfPages
     this.haveRead = haveRead
     this.info = function() {
-        return `${this.title} by ${this.author}, ${this.numberOfPages}, ${this.haveRead}.`;
+        return `${this.title} by ${this.author}, ${this.numberOfPages} pages, ${this.haveRead}.`;
     }
 }
 
@@ -36,13 +36,32 @@ function addBookToLibrary() {
         document.querySelector('#author').value = '';
         document.querySelector('#numberOfPages').value = '';
         document.querySelector('#haveRead').value = '';
-        //call the displayBooks function
     });
 }
 
+// display the books in myLibrary array on the page
 
+function displayBooks() {
+    //set event listener on the display button
+    const addBookButton = document.querySelector('#addBookButton');
+    addBookButton.addEventListener('click', function() {
+        //get the book container
+        const bookContainer = document.querySelector('#bookContainer');
+        //loop through the myLibrary array
+        for (let i = 0; i < myLibrary.length; i++) {
+            //create a new div for each book
+            const bookDiv = document.createElement('div');
+            //add a class to the div
+            bookDiv.classList.add('book');
+            //add the book info to the div
+            bookDiv.textContent = myLibrary[i].info();
+            //append the div to the book container
+            bookContainer.appendChild(bookDiv);
+        }
+    });
+}
 
-//call the addBookToLibrary function
 addBookToLibrary();
+displayBooks();
 
 
