@@ -41,7 +41,8 @@ function inputNewBook () {
         <label for="pages">Number of Pages</label>
         <input type="number" name="pages" id="pages">
         <label for="haveRead">Have Read</label>
-        <input type="radio" name="haveRead" id="haveRead" value="have read">
+        <input type="radio" name="haveRead" id="haveRead" value="Yes">Yes
+        <input type="radio" name="haveRead" id="haveRead" value="No">No
         <input type="submit" value="Submit" id="submit">
     `;
     const container = document.querySelector('.container');
@@ -85,7 +86,10 @@ function displayBooks() {
             <p>Title: ${book.title}</p>
             <p>Author: ${book.author}</p>
             <p>Number of Pages: ${book.numberOfPages}</p>
-            <p>Have Read: ${book.haveRead}</p>
+            <input type="radio" name="haveRead" id="haveRead" value="Yes">Yes
+            <input type="radio" name="haveRead" id="haveRead" value="No">No
+            
+
             <button class="remove">Remove</button>
         `;
         displayContainer.appendChild(bookDiv);
