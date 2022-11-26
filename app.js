@@ -42,6 +42,7 @@ submit.addEventListener('click', addBookToLibrary); */
 
 const newBook = document.getElementById('new-book');
 newBook.addEventListener('click', function() {
+    newBook.remove();
     const form = document.createElement('form');
     form.setAttribute('id', 'form');
     form.innerHTML = `
@@ -61,7 +62,7 @@ newBook.addEventListener('click', function() {
     container.style.border = '1px solid black';
     container.style.backgroundColor = 'lightgrey';
     container.style.width = '30vh';
-    container.style.height = '35vh';
+    container.style.height = '35vh';    
     container.appendChild(form);
     const submit = document.getElementById('submit');
     submit.addEventListener('click', addBookToLibrary);
