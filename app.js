@@ -33,15 +33,13 @@ function addBookToLibrary() {
     console.log(myLibrary);
 }
  
-// an event listener to add a book to the myLibrary array when the form is submitted
-
-/* const submit = document.getElementById('submit');
-submit.addEventListener('click', addBookToLibrary); */
-
 // an event listener for the new book button that creates a form to add a new book
 
 const newBook = document.getElementById('new-book');
-newBook.addEventListener('click', function() {
+
+newBook.addEventListener('click', inputNewBook);
+
+function inputNewBook () {
     newBook.remove();
     const form = document.createElement('form');
     form.setAttribute('id', 'form');
@@ -61,13 +59,15 @@ newBook.addEventListener('click', function() {
     const container = document.querySelector('.container');
     container.style.border = '1px solid black';
     container.style.backgroundColor = 'lightgrey';
-    container.style.width = '30vh';
-    container.style.height = '35vh';    
+    container.style.width = '35vh';
+    container.style.height = '40vh';    
     container.appendChild(form);
-    const submit = document.getElementById('submit');
+    submit = document.getElementById('submit');
     submit.addEventListener('click', addBookToLibrary);
 }
-)
+
+// an event listener for the submit button that adds the book to the library
+
 
 
 
