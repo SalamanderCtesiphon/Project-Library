@@ -51,7 +51,7 @@ form {
 }
 
 .display-container {
-    height: 30vh;
+    height: 35vh;
     width: 15vw;
     border: 1px solid black;
     padding: 2vh;
@@ -62,4 +62,12 @@ form {
     justify-content: space-between;
     align-items: flex-start;
     background-color: rgba(181, 162, 113, 0.367);
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
 }
