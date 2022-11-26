@@ -116,9 +116,5 @@ function newBookForm() {
     });
 }
 
-newBookForm();
-
-addBookToLibrary();
-displayBooks();
 
 
