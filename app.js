@@ -13,10 +13,6 @@ function Book(title, author, numberOfPages, haveRead, notRead) {
     }
 }
 
-// prevent default form submission
-
-/*  */
-
 // a function to add a book to the myLibrary array
 
 function addBookToLibrary() {
@@ -62,6 +58,7 @@ function inputNewBook () {
     submit = document.getElementById('submit');
     submit.addEventListener('click', addBookToLibrary);
     submit.addEventListener('click', clearContainer);
+    submit.addEventListener('click', displayBooks);
     form.addEventListener('submit', function(e) {
         e.preventDefault();
     });
@@ -80,6 +77,24 @@ function clearContainer() {
     container.appendChild(newBook);
 }
 
+
+// display the books in the myLibrary array inside of the display-container div
+
+function displayBooks() {
+    const displayContainer = document.querySelector('.display-container');
+    myLibrary.forEach(book => {
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book');
+        bookDiv.innerHTML = `
+            <p>Title: ${book.title}</p>
+            <p>Author: ${book.author}</p>
+            <p>Number of Pages: ${book.numberOfPages}</p>
+            <p>Have Read: ${book.haveRead}</p>
+            <p>Not Read: ${book.notRead}</p>
+        `;
+        displayContainer.appendChild(bookDiv);
+    });
+}
 
 
 
