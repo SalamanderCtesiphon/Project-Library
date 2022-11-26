@@ -15,9 +15,13 @@ h1 {
     border-bottom: 1px solid #ccc; 
 }
 
-.inputField {
+#new-book {
+    margin: 2vh;
+}
+
+.container {
     width: 15vw;
-    height: 42vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,3 +74,4 @@ form {
     margin: 2vh;
     border-radius: 4px;
 }
+
