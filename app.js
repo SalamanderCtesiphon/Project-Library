@@ -2,12 +2,11 @@ let myLibrary = [];
 
 // write a constructor for makkng "Book" objects
 
-function Book(title, author, numberOfPages, haveRead, notRead) {
+function Book(title, author, numberOfPages, haveRead) {
     this.title = title
     this.author = author
     this.numberOfPages = numberOfPages
     this.haveRead = haveRead
-    this.notRead = notRead
     this.info = function() {
         return `${this.title} by ${this.author}, ${this.numberOfPages} pages, ${this.haveRead}.`;
     }
@@ -20,10 +19,8 @@ function addBookToLibrary() {
     const author = document.getElementById('author').value;
     const numberOfPages = document.getElementById('pages').value;
     const haveRead = document.getElementById('haveRead').value;
-    const notRead = document.getElementById('notRead').value;
-    const book = new Book(title, author, numberOfPages, haveRead, notRead);
+    const book = new Book(title, author, numberOfPages, haveRead);
     myLibrary.push(book);
-    console.log(myLibrary);
 }
  
 // an event listener for the new book button that creates a form to add a new book
@@ -45,8 +42,6 @@ function inputNewBook () {
         <input type="number" name="pages" id="pages">
         <label for="haveRead">Have Read</label>
         <input type="radio" name="haveRead" id="haveRead" value="have read">
-        <label for="notRead">Not Read</label>
-        <input type="radio" name="notRead" id="notRead" value="not read">
         <input type="submit" value="Submit" id="submit">
     `;
     const container = document.querySelector('.container');
@@ -81,6 +76,7 @@ function clearContainer() {
 // display the books in the myLibrary array inside of the display-container div
 
 function displayBooks() {
+    clearDisplayContainer();
     const displayContainer = document.querySelector('.display-container');
     myLibrary.forEach(book => {
         const bookDiv = document.createElement('div');
@@ -90,14 +86,33 @@ function displayBooks() {
             <p>Author: ${book.author}</p>
             <p>Number of Pages: ${book.numberOfPages}</p>
             <p>Have Read: ${book.haveRead}</p>
-            <p>Not Read: ${book.notRead}</p>
+            <button class="remove">Remove</button>
         `;
         displayContainer.appendChild(bookDiv);
     });
 }
 
+// function to clear display-container div
 
+function clearDisplayContainer() {
+    const displayContainer = document.querySelector('.display-container');
+    displayContainer.innerHTML = '';
+}
 
+// an event listener for the remove button that removes the book from the myLibrary array
+
+const displayContainer = document.querySelector('.display-container');
+
+displayContainer.addEventListener('click', removeBook);
+
+function removeBook(e) {
+    if (e.target.classList.contains('remove')) {
+        const book = e.target.parentElement;
+        const index = Array.from(book.parentElement.children).indexOf(book);
+        myLibrary.splice(index, 1);
+        displayBooks();
+    }
+}
 
 
 
