@@ -39,27 +39,6 @@ function addBookToLibrary() {
     });
 }
 
-// display the books in myLibrary array on the page
-
-function displayBooks() {
-    //set event listener on the display button
-    const addBookButton = document.querySelector('#addBookButton');
-    addBookButton.addEventListener('click', function() {
-        //get the book container
-        const bookContainer = document.querySelector('#bookContainer');
-        //loop through the myLibrary array
-        for (let i = 0; i < myLibrary.length; i++) {
-            //create a new div for each book
-            const bookDiv = document.createElement('div');
-            //add a class to the div
-            bookDiv.classList.add('book');
-            //add the book info to the div
-            bookDiv.textContent = myLibrary[i].info();
-            //append the div to the book container
-            bookContainer.appendChild(bookDiv);
-        }
-    });
-}
 
 
 
