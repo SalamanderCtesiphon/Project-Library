@@ -12,7 +12,6 @@ function Book(title, author, numberOfPages, haveRead) {
     }
 }
 
-const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', "have read")
 
 
 // prevent default form submission
@@ -21,6 +20,22 @@ const form = document.querySelector('form');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
+
+
+// a function to add a book to the myLibrary array
+
+function addBookToLibrary() {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const numberOfPages = document.getElementById('pages').value;
+    const haveRead = document.getElementById('haveRead').value;
+    const book = new Book(title, author, numberOfPages, haveRead);
+    myLibrary.push(book);
+    console.log(myLibrary);
+}
+ 
+addBookToLibrary();
+
 
 
 
