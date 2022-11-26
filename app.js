@@ -69,7 +69,16 @@ function inputNewBook () {
 
 // a function to remove the form from the page and display the new book button
 
-
+function clearContainer() {
+    const form = document.getElementById('form');
+    form.remove();
+    const container = document.querySelector('.container');
+    container.style.border = '';
+    container.style.backgroundColor = '';
+    container.style.width = '';
+    container.style.height = '';
+    container.appendChild(newBook);
+}
 
 
 
