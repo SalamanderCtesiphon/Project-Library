@@ -15,10 +15,7 @@ function Book(title, author, numberOfPages, haveRead, notRead) {
 
 // prevent default form submission
 
-/* const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-}); */
+/*  */
 
 // a function to add a book to the myLibrary array
 
@@ -64,9 +61,14 @@ function inputNewBook () {
     container.appendChild(form);
     submit = document.getElementById('submit');
     submit.addEventListener('click', addBookToLibrary);
+    submit.addEventListener('click', clearContainer);
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+    });
 }
 
-// an event listener for the submit button that adds the book to the library
+// a function to remove the form from the page and display the new book button
+
 
 
 
