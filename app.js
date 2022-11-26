@@ -62,59 +62,6 @@ function displayBooks() {
 }
 
 
-// a function that creates a form for adding a new book when the newBook button is clicked
-
-function newBookForm() {
-    //set event listener on the newBook button
-    const newBookButton = document.querySelector('#newBookButton');
-    newBookButton.addEventListener('click', function() {
-        //get the form container
-        const formContainer = document.querySelector('#formContainer');
-        //create a form
-        const form = document.createElement('form');
-        //create a label and input for the title
-        const titleLabel = document.createElement('label');
-        titleLabel.textContent = 'Title: ';
-        const titleInput = document.createElement('input');
-        titleInput.setAttribute('type', 'text');
-        titleInput.setAttribute('id', 'title');
-        //create a label and input for the author
-        const authorLabel = document.createElement('label');
-        authorLabel.textContent = 'Author: ';
-        const authorInput = document.createElement('input');
-        authorInput.setAttribute('type', 'text');
-        authorInput.setAttribute('id', 'author');
-        //create a label and input for the number of pages
-        const numberOfPagesLabel = document.createElement('label');
-        numberOfPagesLabel.textContent = 'Number of Pages: ';
-        const numberOfPagesInput = document.createElement('input');
-        numberOfPagesInput.setAttribute('type', 'text');
-        numberOfPagesInput.setAttribute('id', 'numberOfPages');
-        //create a label and input for the have read
-        const haveReadLabel = document.createElement('label');
-        haveReadLabel.textContent = 'Have Read: ';
-        const haveReadInput = document.createElement('input');
-        haveReadInput.setAttribute('type', 'text');
-        haveReadInput.setAttribute('id', 'haveRead');
-        //create a submit button
-        const submitButton = document.createElement('button');
-        submitButton.setAttribute('type', 'submit');
-        submitButton.setAttribute('id', 'addBookButton');
-        submitButton.textContent = 'Submit';
-        //append the form elements to the form
-        form.appendChild(titleLabel);
-        form.appendChild(titleInput);
-        form.appendChild(authorLabel);
-        form.appendChild(authorInput);
-        form.appendChild(numberOfPagesLabel);
-        form.appendChild(numberOfPagesInput);
-        form.appendChild(haveReadLabel);
-        form.appendChild(haveReadInput);
-        form.appendChild(submitButton);
-        //append the form to the form container
-        formContainer.appendChild(form);
-    });
-}
 
 
 
