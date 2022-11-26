@@ -88,7 +88,7 @@ function displayBooks() {
             <p>Number of Pages: ${book.numberOfPages}</p>
             <input type="radio" name="haveRead" id="haveRead" value="Yes">Yes
             <input type="radio" name="haveRead" id="haveRead" value="No">No
-            
+
 
             <button class="remove">Remove</button>
         `;
@@ -117,8 +117,6 @@ function removeBook(e) {
         displayBooks();
     }
 }
-
-
 
 
 
