@@ -3,3 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #333;
+    height: 10vh;
+    width: 100vw;
+    padding: 2vh;
+    border-bottom: 1px solid #ccc; 
+}
+
+.inputField {
+    width: 15vw;
+    height: 37vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 2vh;
+    margin: 2vh;
+    border-radius: 4px;
+    background-color: rgba(169, 169, 169, 0.367);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.radioButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+}
