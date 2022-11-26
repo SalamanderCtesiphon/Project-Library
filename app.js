@@ -58,6 +58,10 @@ newBook.addEventListener('click', function() {
         <input type="submit" value="Submit" id="submit">
     `;
     const container = document.querySelector('.container');
+    container.style.border = '1px solid black';
+    container.style.backgroundColor = 'lightgrey';
+    container.style.width = '30vh';
+    container.style.height = '35vh';
     container.appendChild(form);
     const submit = document.getElementById('submit');
     submit.addEventListener('click', addBookToLibrary);
