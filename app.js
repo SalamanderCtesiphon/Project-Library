@@ -7,9 +7,10 @@ function Book(title, author, numberOfPages, haveRead) {
     this.author = author
     this.numberOfPages = numberOfPages
     this.haveRead = haveRead
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.numberOfPages} pages, ${this.haveRead}.`;
+    this.toggleRead = function() {
+        this.haveRead = !this.haveRead
     }
+
 }
 
 // a function to add a book to the myLibrary array
@@ -40,7 +41,8 @@ function inputNewBook () {
         <input type="text" name="author" id="author">
         <label for="pages">Number of Pages</label>
         <input type="number" name="pages" id="pages">
-        <input type="checkbox" name="haveRead" id="haveRead" value="Yes">Have Read
+        <label for="haveRead">Have Read</label>
+        <input type="text" name="haveRead" id="haveRead">
         <input type="submit" value="Submit" id="submit">
     `;
     const container = document.querySelector('.container');
@@ -84,8 +86,9 @@ function displayBooks() {
             <p>Title: ${book.title}</p>
             <p>Author: ${book.author}</p>
             <p>Number of Pages: ${book.numberOfPages}</p>
-            <input type="checkbox" name="haveRead" id="haveRead" value="Yes">Have Read  
+            <p>Have Read: ${book.haveRead}</p>
             <button class="remove">Remove</button>
+            <input type="button" value="Change read status" id="toggle">
         `;
         displayContainer.appendChild(bookDiv);
     });
@@ -112,6 +115,21 @@ function removeBook(e) {
         displayBooks();
     }
 }
+
+// an event listener for the toggle button that changes the read status of the book
+
+displayContainer.addEventListener('click', toggleRead);
+
+function toggleRead(e) {
+    if (e.target.id === 'toggle') {
+        const book = e.target.parentElement;
+        const index = Array.from(book.parentElement.children).indexOf(book);
+        myLibrary[index].toggleRead();
+        displayBooks();
+    }
+}
+
+
 
 
 
