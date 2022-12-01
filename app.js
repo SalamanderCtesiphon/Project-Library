@@ -117,6 +117,7 @@ function removeBook(e) {
 }
 
 // an event listener for the toggle button that changes the read status of the book
+// I am not sure what is going on 
 
 displayContainer.addEventListener('click', toggleRead);
 
