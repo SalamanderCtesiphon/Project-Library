@@ -1,5 +1,15 @@
 let myLibrary = [];
 
+function HaveRead() {
+    this.read = false;
+    this.toggleRead = function() {
+        this.read = !this.read;
+    }
+}
+
+HaveRead.prototype = Object.create(Book.prototype);
+
+
 // write a constructor for makkng "Book" objects
 
 function Book(title, author, numberOfPages, haveRead) {
