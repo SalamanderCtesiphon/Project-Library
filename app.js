@@ -1,5 +1,7 @@
 let myLibrary = [];
 
+// attached the haveRead property to the Book prototype
+// so that the state of the haveRead property is shared
 function HaveRead() {
     this.read = false;
     this.toggleRead = function() {
