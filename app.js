@@ -64,13 +64,35 @@ function inputNewBook () {
     container.style.height = '40vh';    
     container.appendChild(form);
     submit = document.getElementById('submit');
-    submit.addEventListener('click', addBookToLibrary);
-    submit.addEventListener('click', clearContainer);
-    submit.addEventListener('click', displayBooks);
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-    });
+    
+    submit.addEventListener('click', validateForm);
 }
+
+// a funtion to ensure that all fields are filled out before submitting
+
+function validateForm() {
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const numberOfPages = document.getElementById('pages');
+    const haveRead = document.getElementById('haveRead');
+    if (this.title === '' || this.author === '' || this.numberOfPages === '' || this.haveRead === '') {
+        formError = document.createElement('p');
+        formError.innerHTML = 'Please fill out all fields';
+        formError.style.color = 'red';
+        formError.style.fontSize = '12px';
+        form.appendChild(formError);
+        
+    } else {    
+        addBookToLibrary();
+        clearContainer();
+        displayBooks();
+    }
+}
+
+
+
+
+
 
 // a function to remove the form from the page and display the new book button
 
@@ -141,6 +163,8 @@ function toggleRead(e) {
         displayBooks();
     }
 }
+
+
 
 
 
